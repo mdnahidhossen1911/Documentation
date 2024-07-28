@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-</head>
-<body>
+
 
 <h2> Flutter Documentation</h2>
 
@@ -19,6 +15,4 @@
 
 </table>
 
-</body>
-</html>
 
