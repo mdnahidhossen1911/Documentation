@@ -251,12 +251,18 @@
 
             <a class="nav-link scrollto" href="#section-1">Basic Widget</a>
             <ul class="nav flex-column mt-2 lvl2">
-              <li class="nav-item">
-                <a class="nav-link scrollto" href="#text">Text</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link scrollto" href="#text1">Button</a>
-              </li>
+
+              <li class="nav-item"><a class="nav-link scrollto" href="#sourcecodeflow">Source Code Flow</a></li>
+              <li class="nav-item"><a class="nav-link scrollto" href="#materialApp">MaterialApp Class</a></li>
+              <li class="nav-item"><a class="nav-link scrollto" href="#scaffold">Scaffold Class</a></li>
+              <li class="nav-item"><a class="nav-link scrollto" href="#appbar">AppBar</a></li>
+              <li class="nav-item"><a class="nav-link scrollto" href="#snackBar">SnackBar</a></li>
+              <li class="nav-item"><a class="nav-link scrollto" href="#floatingButton">Floating Button</a></li>
+
+
+
+
+
 
             </ul>
           </li>
@@ -282,46 +288,155 @@
             <!------------------------ Menu bar end -------------------------------->
             <!------------------------ Menu bar end-------------------------------->
 
+
+
+
+
+
+
+
+
+    <!-- basic widget -->
     <div class="docs-content">
       <div class="container">
 
         <article class="docs-article" id="section-1">
           <h1 class="section-heading">Basic Widget</h1><hr>
-          <section class="docs-section" id="text">
-            <h2 class="section-heading">Section Item 1.6</h2>
-            <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
-              Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
-              imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
-              porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin
-              est. Vestibulum ultricies malesuada tempor.</p>
+
+
+          <section class="docs-section" id="sourcecodeflow">
+            <h2 class="section-heading">Source code Flow</h2>
+            <p>main -> My App -> MaterialApp -> Activity -> Scaffold (appBar,body) </p>
               <div class="docs-code-block">
                 <pre class="shadow-lg rounded"><code class="language-json hljs">
-  
-                  nahid
-  
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomeActivity(),
+    );
+  }
+}
+
+
+class HomeActivity extends StatelessWidget {
+  const HomeActivity({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('My App'),
+        backgroundColor: Colors.blue,
+      ),
+      body: Center(
+        child: Text('Home'),
+      ),
+    );
+  }
+}
                 </code></pre>
               </div>
           </section>
 
-
-          <section class="docs-section" id="text1">
-            <h2 class="section-heading">Section Item 1.6</h2>
-            <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
-              Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
-              imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
-              porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin
-              est. Vestibulum ultricies malesuada tempor.</p>
+          <section class="docs-section" id="materialApp">
+            <h2 class="section-heading">MaterialApp class</h2>
               <div class="docs-code-block">
                 <pre class="shadow-lg rounded"><code class="language-json hljs">
-  
-                  nahid
-  
+MaterialApp(
+  theme: ThemeData(primarySwatch: Colors.cyan),
+  darkTheme: ThemeData(primarySwatch: Colors.pink),
+  color: Colors.blue,
+  debugShowCheckedModeBanner: false,
+  home: HomeActivity(),
+)
                 </code></pre>
               </div>
           </section>
+
+          <section class="docs-section" id="scaffold">
+            <h2 class="section-heading">Scaffold class</h2>
+              <div class="docs-code-block">
+                <pre class="shadow-lg rounded"><code class="language-json hljs">
+Scaffold(
+  Appbar,
+  Drawer,
+  EndDrawer,
+  Floating Action Button,
+  Bottom tab navigation,
+  Body
+)
+                </code></pre>
+              </div>
+          </section>
+
+          <section class="docs-section" id="appbar">
+            <h2 class="section-heading">AppBar</h2>
+              <div class="docs-code-block">
+                <pre class="shadow-lg rounded"><code class="language-json hljs">
+AppBar(
+  title: Text('My App'),
+  titleSpacing: 20,
+  centerTitle: true,
+  toolbarHeight: 60,
+  toolbarOpacity: 1,
+  elevation: 0,
+  backgroundColor: Colors.blue,
+  iconTheme: IconThemeData(color: Colors.white),
+)
+                </code></pre>
+              </div>
+              <br>
+              <h3 class="section-heading">AppBar Action IconButton</h3>
+              <br>
+              <div class="docs-code-block">
+                <pre class="shadow-lg rounded"><code class="language-json hljs">
+AppBar(
+  actions: [
+  IconButton(onPressed: (){}, icon: Icon(Icons.search))
+  ]
+)
+                </code></pre>
+              </div>
+          </section>
+
+          <section class="docs-section" id="snackBar">
+            <h2 class="section-heading">SnackBar</h2>
+            <p>onPressed: (){ MysnackBar('Messege',context); }</p>
+              <div class="docs-code-block">
+                <pre class="shadow-lg rounded"><code class="language-json hljs">
+MysnackBar(msg,context){
+  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
+}
+                </code></pre>
+              </div>
+          </section>
+
+          <section class="docs-section" id="floatingButton">
+            <h2 class="section-heading">Floating Button</h2>
+              <div class="docs-code-block">
+                <pre class="shadow-lg rounded"><code class="language-json hljs">
+floatingActionButton: FloatingActionButton(
+  backgroundColor: Colors.blue,
+  child: Icon(Icons.add,color: Colors.white,),
+  onPressed: (){},
+),
+                </code></pre>
+              </div>
+          </section>
+
 
 
         </article>
+        <!-- basic widget end -->
+
 
 
 
@@ -329,18 +444,15 @@
 
 
         <article class="docs-article" id="section-2">
-         <h1 class="docs-heading">Installation</h1><hr>
+         <h1 class="docs-heading">Advance Widget</h1><hr>
+
+
           <section class="docs-section" id="customwidget">
-            <h2 class="section-heading">Section Item 2.1</h2>
-            <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
-              Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
-              imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
-              porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin
-              est. Vestibulum ultricies malesuada tempor.</p>
+            <h2 class="section-heading">Custom widget</h2>
+            <p>How to create a customize widget</p>
                <div class="docs-code-block">
                 <pre class="shadow-lg rounded"><code class="language-json hljs">
-
-                  import 'package:flutter/cupertino.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class UserItem extends StatelessWidget {
@@ -407,12 +519,27 @@ class UserItem extends StatelessWidget {
       ),
     );
   }
-}
-
-                  
+}    
+                </code></pre>
+              </div>
+              <h4>Call Widget</h4>
+              <div class="docs-code-block">
+                <pre class="shadow-lg rounded"><code class="language-json hljs">
+UserItem(
+  name: 'Nahid',
+  networkImage: NetworkImage('https//photo.com/nahid.jpg'),
+  gmail: 'nahid@gmail.com',
+  number: '015XXXXXXXX',
+  color: Colors.white,
+  onPress: (){
+    print("position ${index+1}");
+  }
+)
                 </code></pre>
               </div>
           </section>
+
+
 
 
           <section class="docs-section" id="item-2-1-1">
@@ -425,44 +552,7 @@ class UserItem extends StatelessWidget {
           </section>
 
 
-          <section class="docs-section" id="item-2-1-2">
-            <h2 class="section-heading">Section Item 2.1.2</h2>
-            <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
-              Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
-              imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
-              porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin
-              est. Vestibulum ultricies malesuada tempor.</p>
-          </section>
-
-
-          <section class="docs-section" id="item-2-1-3">
-            <h2 class="section-heading">Section Item 2.1.3</h2>
-            <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
-              Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
-              imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
-              porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin
-              est. Vestibulum ultricies malesuada tempor.</p>
-          </section>
-
-
-          <section class="docs-section" id="item-2-2">
-            <h2 class="section-heading">Section Item 2.2</h2>
-            <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
-              Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
-              imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
-              porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin
-              est. Vestibulum ultricies malesuada tempor.</p>
-          </section>
-
-
-          <section class="docs-section" id="item-2-3">
-            <h2 class="section-heading">Section Item 2.3</h2>
-            <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
-              Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
-              imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
-              porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin
-              est. Vestibulum ultricies malesuada tempor.</p>
-          </section>
+        
 
         </article>
 
