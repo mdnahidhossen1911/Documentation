@@ -1,0 +1,151 @@
+body {
+	font-size: 14px;
+	color: #555555;
+	line-height: normal;
+}
+
+pre {
+	overflow: auto;
+	width: 100%;
+}
+
+.slogan {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 14px;
+	line-height: 1.2;
+}
+
+.logo {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 7px;
+}
+
+.btn-purple {
+	background-color: #5D3C90;
+	color: #fff;
+}
+
+.btn-purple:hover {
+	background-color: #654598;
+	color: #fff;
+}
+
+.aside-header {
+	height: 60px;
+	background: var(--info);
+	padding: 7px 15px;
+	color: #fff;
+}
+
+.header {
+	height: 60px;
+}
+
+.aside-header .title {
+	line-height: 1.2
+}
+
+.aside-header .toggle_button{
+    background: #fff;
+    color: #000!important;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+}
+
+.menu-aside {
+	list-style: none;
+	padding: 0;
+	margin-top: 7px;
+}
+
+.menu-aside li a {
+	padding: 10px 15px;
+	display: block;
+	color: #333;
+}
+
+.menu-aside li a.active {
+	color: var(--blue);
+	font-weight: 500
+}
+
+.menu-aside li a:hover {
+	background-color: #f2f2f2;
+}
+
+.main-content {
+	padding: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 0px
+}
+
+.aside-content {
+	overflow-y: auto;
+	height: 100%;
+	background: #eee;
+}
+
+ul.list-circle {
+	list-style-type: circle;
+}
+
+.title-doc {
+	font-size: 36px;
+	margin-top: 60px;
+	font-weight: 300;
+	margin-bottom: 0;
+}
+
+.subtitle-doc {
+	font-size: 13px;
+	color: #999;
+	font-weight: 400;
+	display: inline-block;
+	padding-bottom: 5px;
+	text-transform: uppercase;
+	margin-bottom: 25px;
+	margin-top: 45px;
+}
+
+.subtitle-doc a {
+	padding-left: 10px;
+	color: #666;
+}
+
+.subtitle-doc a:hover {
+	color: blue;
+}
+
+.btn-getcode {
+	padding: 3px 7px;
+	font-size: 12px;
+	background-color: orange;
+	color: #fff;
+	float: right;
+}
+
+.aside-wrap {
+	background-color: #fff;
+	border-right: 1px solid rgba(0, 0, 0, .05);
+}
+
+@media (min-width:768px) {
+	.aside-content {
+		display: block!important;
+	}
+	.aside-wrap {
+		position: -webkit-sticky;
+		position: sticky;
+		height: calc(100vh - 53px);
+		z-index: 1000;
+		top: 0;
+	}
+	.main-content {
+		padding: 60px;
+		max-width: 1280px;
+	}
+}
