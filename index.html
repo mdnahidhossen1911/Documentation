@@ -261,14 +261,16 @@ Scaffold(
 							<br>
 							<h2 class="title-doc">AppBar</h2><br>
 	<pre><code>
-Scaffold(
-  Appbar,
-  Drawer,
-  EndDrawer,
-  Floating Action Button,
-  Bottom tab navigation,
-  Body
-)
+AppBar(
+   title: Text('My App'),
+   titleSpacing: 20,
+   centerTitle: true,
+   toolbarHeight: 60,
+   toolbarOpacity: 1,
+   elevation: 0,
+   backgroundColor: Colors.blue,
+   iconTheme: IconThemeData(color: Colors.white),
+),
 	</code></pre>
 	<h2 class="title-doc">AppBar Action IconButton
 	</h2><br>
