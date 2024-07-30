@@ -128,6 +128,7 @@ p.logo {
 					<div class="aside-content collapse" id="navbar_aside">
 						<nav  class="menu-wrap">
 							<ul class="menu-aside">
+								
 								<li> <a class="page-scroll nav-link" href="#templat_features">Dart Programing</a> </li>
 								<li> <a class="page-scroll nav-link" href="#Source_code_Flow">Source code Flow</a> </li>
 								<li> <a class="page-scroll nav-link" href="#MaterialApp_class">MaterialApp class</a> </li>
@@ -135,7 +136,8 @@ p.logo {
 								<li> <a class="page-scroll nav-link" href="#AppBar">AppBar</a> </li>
 								<li> <a class="page-scroll nav-link" href="#SnackBar">SnackBar</a> </li>
 								<li> <a class="page-scroll nav-link" href="#Floating_Button">Floating Button</a> </li>
-
+								<li> <a class="page-scroll nav-link" href="#Drawer">Drawer & End Drawer</a> </li>
+								<li> <a class="page-scroll nav-link" href="#Bottomnavigationbar">Bottom Navigation Bar</a> </li>
 
 
 								
@@ -145,6 +147,8 @@ p.logo {
 				</aside>
 				<main class="main-wrap col-sm-12 col-md-9 col-lg-10">
 					<div class="main-content">
+
+
 
 						<section id="templat_features">
 							<br>
@@ -262,14 +266,14 @@ Scaffold(
 							<h2 class="title-doc">AppBar</h2><br>
 	<pre><code>
 AppBar(
-   title: Text('My App'),
-   titleSpacing: 20,
-   centerTitle: true,
-   toolbarHeight: 60,
-   toolbarOpacity: 1,
-   elevation: 0,
-   backgroundColor: Colors.blue,
-   iconTheme: IconThemeData(color: Colors.white),
+    title: Text('My App'),
+    titleSpacing: 20,
+    centerTitle: true,
+    toolbarHeight: 60,
+    toolbarOpacity: 1,
+    elevation: 0,
+    backgroundColor: Colors.blue,
+    iconTheme: IconThemeData(color: Colors.white),
 ),
 	</code></pre>
 	<h2 class="title-doc">AppBar Action IconButton
@@ -310,6 +314,94 @@ floatingActionButton: FloatingActionButton(
 						<br><hr>	
 						</section>
 
+						<section id="Drawer">
+							<br>
+							<h2 class="title-doc">Drawer</h2><br>
+	<pre><code>
+		drawer: Drawer(
+			child: ListView(
+			  children: [
+				DrawerHeader(
+					padding: EdgeInsets.all(0),
+					child: UserAccountsDrawerHeader(
+					  decoration: BoxDecoration(color: Colors.blue),
+					  accountName: Text('Nahid'),
+					  accountEmail: Text('nahid@gmail.com'),
+					  onDetailsPressed: (){},
+					  currentAccountPicture: Image.network('src'),
+					)),
+				
+				ListTile(title: Text('Home'), leading: Icon(Icons.home), onTap: (){},),
+	
+				ListTile(title: Text('Card'), leading: Icon(Icons.card_giftcard), onTap: (){},),
+				
+				ListTile(title: Text('File'), leading: Icon(Icons.file_copy), onTap: (){},),
+				
+				ListTile(title: Text('Setting'), leading: Icon(Icons.settings_outlined), onTap: (){},),
+				
+				ListTile(title: Text('About'), leading: Icon(Icons.account_circle), onTap: (){},),
+	
+			  ],
+			),
+		  )
+	</code></pre>
+						<br>
+						<h2 class="title-doc">End Drawer</h2><br>
+	<pre><code>
+		endDrawer : Drawer(
+			child: ListView(
+			  children: [
+				DrawerHeader(
+					padding: EdgeInsets.all(0),
+					child: UserAccountsDrawerHeader(
+					  decoration: BoxDecoration(color: Colors.blue),
+					  accountName: Text('Nahid'),
+					  accountEmail: Text('nahid@gmail.com'),
+					  onDetailsPressed: (){},
+					  currentAccountPicture: Image.network('src'),
+					)),
+				
+				ListTile(title: Text('Home'), leading: Icon(Icons.home), onTap: (){},),
+	
+				ListTile(title: Text('Card'), leading: Icon(Icons.card_giftcard), onTap: (){},),
+				
+				ListTile(title: Text('File'), leading: Icon(Icons.file_copy), onTap: (){},),
+				
+				ListTile(title: Text('Setting'), leading: Icon(Icons.settings_outlined), onTap: (){},),
+				
+				ListTile(title: Text('About'), leading: Icon(Icons.account_circle), onTap: (){},),
+	
+			  ],
+			),
+		  )
+	</code></pre>
+						<br><hr>	
+						</section>
+
+						<section id="Bottomnavigationbar">
+							<br>
+							<h2 class="title-doc">Bottom Navigation Bar</h2><br>
+	<pre><code>
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.white,
+        selectedItemColor: Colors.teal,
+        unselectedItemColor: Color(0xff2b3032),
+        currentIndex: 1,
+        elevation: 5,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.home_filled),label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.folder_copy_outlined),label: 'Book'),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite_border_outlined),label: 'Favorite'),
+          BottomNavigationBarItem(icon: Icon(Icons.settings_outlined),label: 'Setting'),
+        ],
+        onTap: (int index){
+
+        }
+      )
+	</code></pre>
+						<br><hr>	
+						</section>
 
 
 
