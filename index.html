@@ -138,6 +138,7 @@ p.logo {
 								<li> <a class="page-scroll nav-link" href="#Floating_Button">Floating Button</a> </li>
 								<li> <a class="page-scroll nav-link" href="#Drawer">Drawer & End Drawer</a> </li>
 								<li> <a class="page-scroll nav-link" href="#Bottomnavigationbar">Bottom Navigation Bar</a> </li>
+								<li> <a class="page-scroll nav-link" href="#body">Body & Container</a> </li>
 
 
 								
@@ -403,6 +404,32 @@ floatingActionButton: FloatingActionButton(
 						<br><hr>	
 						</section>
 
+						<section id="body">
+							<br>
+							<h2 class="title-doc">Body & Container</h2><br>
+	<pre><code>
+      body: Center(
+        child: Container(
+          width: 200,
+          height: 200,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            color: Colors.blue,
+            border: Border.all(color: Colors.black,width: 1),
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black87,
+                blurRadius: 30
+              )
+            ]
+          ),
+          child: Text('Nahid'),
+        ),
+      )
+	</code></pre>
+						<br><hr>	
+						</section>
 
 
 
