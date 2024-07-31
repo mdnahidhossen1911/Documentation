@@ -141,6 +141,7 @@ p.logo {
 								<li> <a class="page-scroll nav-link" href="#body">Body & Container</a> </li>
 								<li> <a class="page-scroll nav-link" href="#row">Row & Column</a> </li>
 								<li> <a class="page-scroll nav-link" href="#button">Button</a> </li>
+								<li> <a class="page-scroll nav-link" href="#alertdialog">Alert Dialog</a> </li>
 
 
 
@@ -500,6 +501,59 @@ floatingActionButton: FloatingActionButton(
           OutlinedButton(onPressed: (){}, child: Text('Click')),
         ],
       )
+	</code></pre>
+						<br>
+							<hr>	
+						</section>
+
+						
+						<section id="alertdialog">
+							<br>
+							<h2 class="title-doc">Alert Dialog</h2><br>	
+
+	<pre><code>
+   alertbox(
+       {String? title,
+         String? bodytext,
+         required BuildContext? context,
+         required VoidCallback? yesOnpress,
+         required VoidCallback? noOnpress,
+       })
+   {
+     /// Main Code
+     showDialog(
+         context: context!,
+         builder: (BuildContext context){
+           return (
+               Expanded(
+                 child: AlertDialog(
+                   title: Text('$title'),
+                   content: Text('$bodytext'),
+                   actions: [
+                     OutlinedButton(onPressed: noOnpress, child: Text('No')),
+                     ElevatedButton(onPressed: yesOnpress, child: Text('Yes')),
+                   ],
+                 ),
+               )
+           );
+         });
+     /// main code
+   }
+	</code></pre>
+						<br>
+	<pre><code>
+          ElevatedButton(onPressed: (){
+
+            alertbox(
+                title: 'Nahid',
+                bodytext: 'hi i am Nahid',
+                context: context,
+                yesOnpress: (){},
+                noOnpress: (){
+                  Navigator.of(context).pop();
+                });
+
+          }, child: Text('Click'))
 	</code></pre>
 						<br>
 							<hr>	
