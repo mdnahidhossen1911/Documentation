@@ -140,6 +140,7 @@ p.logo {
 								<li> <a class="page-scroll nav-link" href="#Bottomnavigationbar">Bottom Navigation Bar</a> </li>
 								<li> <a class="page-scroll nav-link" href="#body">Body & Container</a> </li>
 								<li> <a class="page-scroll nav-link" href="#row">Row & Column</a> </li>
+								<li> <a class="page-scroll nav-link" href="#button">Button</a> </li>
 
 
 
@@ -468,6 +469,41 @@ floatingActionButton: FloatingActionButton(
 							<hr>	
 						</section>
 
+						
+						<section id="button">
+							<br>
+							<h2 class="title-doc">Buttton</h2><br>
+							<ul class="list-circle">
+							  <li>Elevated Button</li>
+							  <li>Text Button</li>
+							  <li>Outline Button</li>
+							</ul></br>	
+
+	<pre><code>
+  ButtonStyle btn = ElevatedButton.styleFrom(
+    minimumSize: Size(double.infinity, 55),
+    backgroundColor: Colors.pink,
+    foregroundColor: Colors.white,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(15))
+    )
+  );
+	</code></pre>
+						<br>
+	<pre><code>
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ElevatedButton(onPressed: (){}, child: Text('Click'),style: btn,),
+          TextButton(onPressed: (){}, child: Text('Click')),
+          OutlinedButton(onPressed: (){}, child: Text('Click')),
+        ],
+      )
+	</code></pre>
+						<br>
+							<hr>	
+						</section>
 
 
 
